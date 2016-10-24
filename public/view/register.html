@@ -1,0 +1,26 @@
+﻿<div class="row modal-close">
+    <img src="img/close.png" ng-click="register.close()" />
+</div>
+<div class="col-xs-12 text-center modal-title">
+    <h1>Registration</h1>
+</div>
+<div class="row col-xs-12 register-box ">
+    
+    <form name="register.frmRegister" ng-submit="register.frmRegister.$valid && register.registerUser()">
+        <div class="col-xs-12 m-b-10">
+            <input type="text" class="form-control textbox" required placeholder="Username" ng-model="register.userData.username" />
+        </div>
+        <div class="col-xs-12 m-b-10">
+            <input type="password" class="form-control textbox" ng-minlength="6" required placeholder="Password" ng-model="register.userData.password" />
+        </div>
+        <div class="col-xs-12 m-b-10">
+            <input type="email" class="form-control textbox" required placeholder="Email" ng-model="register.userData.email" />
+        </div>
+        <div class="col-xs-12 text-center m-b-10">
+            <button type="submit" ng-disabled="register.frmRegister.$invalid" class="btn button w-100">Sign Up</button>
+        </div>
+        <div class="col-xs-12 text-center m-b-10">
+            <a href="javascript:void(0)" class="register-link">Login here!</a>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,19 @@
+﻿<div class="row login-box">
+    <form name="login.frmLogin" ng-submit="login.frmLogin.$valid && login.loginUser()">
+        <div class="col-xs-12 m-b-10">
+            <input type="text" class="form-control textbox" required placeholder="Username" ng-model="login.userData.username" />
+        </div>
+        <div class="col-xs-12 m-b-10">
+            <input type="password" class="form-control textbox" required placeholder="Password" ng-model="login.userData.password" />
+        </div>
+        <div class="col-xs-12 text-center m-b-10">
+            <button type="submit" ng-disabled="login.frmLogin.$invalid" class="btn button w-50">Sign In</button>
+        </div>
+        <div class="col-xs-12 text-center m-b-10" ng-if="login.showInvalid">
+            <span class="text-danger">Invalid username or password!</span>
+        </div>
+        <div class="col-xs-12 text-center m-b-10">
+            <a href="javascript:void(0)" class="register-link" ng-click="login.openRegister()">Not Registered? Sign up here!</a>
+        </div>
+    </form>
+</div>

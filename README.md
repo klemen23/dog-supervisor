@@ -1,8 +1,7 @@
-# dog-supervisor
+# Angular
 
-To run the app:
+Steps for start application
 
-1) git Clone
+1) Git Clone
 2) npm install
-3) bower install
-4) node app
+3) node app.js

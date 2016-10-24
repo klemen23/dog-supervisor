@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js" ng-app="doghotelApp" ng-controller="MainController as main">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Dog Supervisor</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="doghotelApp">
+    <meta name="keywords" content="doghotelApp">
+
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+
+    <link rel="stylesheet" href="bower_components/angular-loading-bar/build/loading-bar.css" />
+    <link rel="stylesheet" href="bower_components/components-font-awesome/css/font-awesome.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <!-- endbuild -->
+
+    <link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="styles/main.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div ng-if="userrole != 'admin'">
+        <img src="img/ozadjebrez.jpg" class="bg" />
+        
+        <img ng-src="{{main.menuImage}}" ng-show="isLoggedIn" class="menu" id="menu-button" ng-click="main.openMenu()" />
+      
+        <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="cbp-spmenu-s1">
+            <div class="col-xs-12 text-center menu-li" ng-click="main.openFeeding()">
+                <img src="img/skleda.png" />
+                <p>Feeding</p>
+            </div>
+            <div class="col-xs-12 text-center menu-li" ng-click="main.openWalk()">
+                <img src="img/charlie.png" />
+                <p>Walks</p>
+            </div>
+            <div class="col-xs-12 text-center menu-li" ng-click="main.openContact()">
+                <img src="img/mailbox.png" />
+                <p>Contact us</p>
+            </div>
+            <div class="col-xs-12 text-center menu-li" ng-click="main.logOut()">
+                <p>Logout</p>
+            </div>
+        </nav>
+
+        <div class="main-container container">
+
+            <div ui-view></div>
+        </div>
+
+        <footer>
+           
+            <img src="img/mailbox.png" class="mail-box"  ng-click="main.openContact()" />
+            <img src="img/charlie.png" ng-show="isLoggedIn" class="charlie" ng-click="main.openWalk()" />
+            <img src="img/snoopysleepin.png" ng-show="isLoggedIn" class="snoopysleepin"  />
+            <img src="img/skleda.png" ng-show="isLoggedIn" class="skleda" ng-click="main.openFeeding()" />
+        </footer>
+    </div>
+    <div ng-if="userrole && userrole == 'admin'" ui-view></div>
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-aria/angular-aria.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/ngstorage/ngStorage.js"></script>
+    <script src="bower_components/angular-loading-bar/build/loading-bar.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <!-- endbuild -->
+    <!-- Main JS -->
+    <script src="script/module/ajaxRequestHandler.js "></script>
+    <script src="script/app.js "></script>
+    <script src="script/requestInterceptor.js "></script>
+    <script src="script/config.js "></script>
+    <script src="script/factory/authenticationFactory.js "></script>
+    <script src="script/interceptor.js "></script>
+    <script src="script/route.js "></script>
+    <script src="script/service/userService.js"></script>
+    <script src="script/service/contactService.js"></script>
+    <script src="script/service/dogDetailService.js"></script>
+    <script src="script/controller/mainCtrl.js "></script>
+    <script src="script/controller/loginCtrl.js"></script>
+    <script src="script/controller/registerCtrl.js"></script>
+    <script src="script/controller/homeCtrl.js "></script>
+    <script src="script/controller/contactCtrl.js"></script>
+    <script src="script/controller/adminCtrl.js"></script>
+    <script src="script/controller/userlistCtrl.js"></script>
+    <script src="script/controller/contactlistCtrl.js"></script>
+    <script src="script/controller/dogdetailCtrl.js"></script>
+    <script src="script/controller/dogdetaillistCtrl.js"></script>
+    <script src="script/controller/feedingCtrl.js"></script>
+    <script src="script/controller/walkCtrl.js"></script>
+</body>
+</html>

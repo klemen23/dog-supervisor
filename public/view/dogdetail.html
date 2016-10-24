@@ -1,0 +1,51 @@
+﻿<div class="col-xs-12">
+    <h3>Feeding/Walks</h3>
+</div>
+<div class="col-xs-12">
+    <form name="dogdetail.frmDogDetail" ng-submit="dogdetail.frmDogDetail.$valid && dogdetail.submitDogDetail()">
+        <div class="form-group col-lg-12 m-b-10">
+            <label for="user">User</label>
+            <select class="form-control" name="user" ng-options="user._id as user.username for user in dogdetail.userList"
+                    ng-change="dogdetail.userChanged()" ng-model="dogdetail.currentData.userId"></select>
+        </div>
+
+        <div class="form-group text-center text-capitalize col-lg-12">
+            <b>FEEDING</b>
+        </div>
+        <div class="form-group col-lg-6">
+            <label for="user">Amount</label>
+            <input type="text" class="form-control" placeholder="amount" ng-model="dogdetail.currentData.feeding.amount" />
+        </div>
+        <div class="form-group col-lg-6 m-b-10">
+            <label for="user">Time</label>
+            <input type="text" class="form-control" placeholder="time" ng-model="dogdetail.currentData.feeding.time" />
+        </div>
+
+        <div class="form-group text-center text-capitalize col-lg-12">
+            <b>Walks</b>
+        </div>
+        <div class="form-group col-lg-6">
+            <label for="user">Length</label>
+            <input type="text" class="form-control" placeholder="amount" ng-model="dogdetail.currentData.walks.length" />
+        </div>
+        <div class="form-group col-lg-6">
+            <label for="user">Time</label>
+            <input type="text" class="form-control" placeholder="time" ng-model="dogdetail.currentData.walks.time" />
+        </div>
+
+        <div class="form-group col-lg-12">
+            <label for="user">Contact user</label>
+            <input type="text" class="form-control"  ng-disabled="true" ng-model="dogdetail.username" />
+        </div>
+
+        <div class="col-xs-12 m-b-10">
+            <textarea rows="7" class="form-control " required placeholder="Message" ng-model="dogdetail.currentData.message" />
+        </div>
+        <div class="col-xs-12 text-center">
+            <button type="submit" ng-disabled="dogdetail.frmDogDetail.$invalid" class="btn btn-success">Save</button>
+        </div>
+        <div class="col-xs-12" ng-if="dogdetail.isSaved">
+            <p class="text-success">Saved Successfully!!</p>
+        </div>
+    </form>
+</div>
