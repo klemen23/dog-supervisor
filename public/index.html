@@ -24,12 +24,11 @@
     <link href="styles/main.css" rel="stylesheet" />
 </head>
 
-<body>
+<body ng-cloak="">
     <div ng-if="userrole != 'admin'">
         <img src="img/ozadjebrez.jpg" class="bg" />
-        
         <img ng-src="{{main.menuImage}}" ng-show="isLoggedIn" class="menu" id="menu-button" ng-click="main.openMenu()" />
-      
+
         <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="cbp-spmenu-s1">
             <div class="col-xs-12 text-center menu-li" ng-click="main.openFeeding()">
                 <img src="img/skleda.png" />
@@ -54,11 +53,12 @@
         </div>
 
         <footer>
-           
-            <img src="img/mailbox.png" class="mail-box"  ng-click="main.openContact()" />
+            <img src="img/mailbox.png"  ng-show="!isLoggedIn" class="middle-mail-box" ng-click="main.openContact()" />
+            <img src="img/mailbox.png" ng-show="isLoggedIn" class="mail-box" ng-click="main.openContact()" />
             <img src="img/charlie.png" ng-show="isLoggedIn" class="charlie" ng-click="main.openWalk()" />
             <img src="img/snoopysleepin.png" ng-show="isLoggedIn" class="snoopysleepin"  />
             <img src="img/skleda.png" ng-show="isLoggedIn" class="skleda" ng-click="main.openFeeding()" />
+            <img src="img/dog-supervisor.png" ng-show="isLoggedIn" class="dog-supervisor"/>
         </footer>
     </div>
     <div ng-if="userrole && userrole == 'admin'" ui-view></div>

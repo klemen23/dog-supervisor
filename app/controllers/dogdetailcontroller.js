@@ -72,3 +72,15 @@ exports.updateDogDetail = function (req, res) {
         }
     });
 };
+
+exports.removeDogDetail = function (req, res) {
+    var id = req.params.id;
+    DogDetail.remove({ _id: id }, function (err, result) {
+        if (err) {
+            handleError(res, err.message, 'Error in deleting dogDetail', 500);
+        }
+        else {
+            res.json(result);
+        }
+    });
+};

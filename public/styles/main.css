@@ -9,13 +9,14 @@ img.bg {
     position: fixed;
     top: 0;
     left: 0;
-    
 }
 
-@media screen and (max-width: 1024px) { /* Specific to this particular image */
+@media screen and (max-width: 1024px) {
+    /* Specific to this particular image */
     img.bg {
         left: 50%;
-        margin-left: -512px; /* 50% */
+        margin-left: -512px;
+        /* 50% */
     }
 }
 
@@ -30,7 +31,6 @@ img.bg {
 .w-100 {
     width: 100%;
 }
-
 
 .menu {
     cursor: pointer;
@@ -52,7 +52,6 @@ img.bg {
     position: fixed;
 }
 
-
 .textbox {
     border: black;
     border-radius: 0;
@@ -68,11 +67,12 @@ img.bg {
     color: white;
 }
 
-    .button:hover {
-        color: white;
-    }
+.button:hover {
+    color: white;
+}
 
-.register-link, .register-link:hover {
+.register-link,
+.register-link:hover {
     color: white;
 }
 
@@ -82,43 +82,60 @@ footer {
     width: 100%;
 }
 
-    footer .mail-box {
-        cursor: pointer;
-        height: 150px;
-        width: auto;
-        left: 15%;
-        position: absolute;
-        bottom: 20px;
-    }
+footer .mail-box {
+    cursor: pointer;
+    height: 150px;
+    width: auto;
+    left: 15%;
+    position: absolute;
+    bottom: 25px;
+}
 
-    footer .charlie {
-        cursor: pointer;
-        height: 200px;
-        width: auto;
-        left: 32%;
-        position: absolute;
-        bottom: 5px;
-    }
+footer .middle-mail-box {
+    cursor: pointer;
+    height: 220px;
+    width: auto;
+    left: 45%;
+    position: absolute;
+    bottom: 25px;
+}
 
-    footer .snoopysleepin {
-        
-        height: 250px;
-        width: auto;
-        left: 56%;
-        position: absolute;
-        bottom: 0px;
-    }
+footer .charlie {
+    cursor: pointer;
+    height: 200px;
+    width: auto;
+    left: 32%;
+    position: absolute;
+    bottom: 5px;
+}
 
-    footer .skleda {
-        cursor: pointer;
-        height: 80px;
-        width: auto;
-        left: 76%;
-        position: absolute;
-        bottom: 15px;
-    }
+footer .snoopysleepin {
+    cursor: pointer;
+    height: 250px;
+    width: auto;
+    left: 55%;
+    position: absolute;
+    bottom: 0;
+}
 
+footer .skleda {
+    cursor: pointer;
+    height: 80px;
+    width: auto;
+    left: 74%;
+    position: absolute;
+    bottom: 10px;
+}
 
+footer .dog-supervisor{
+    
+    height: 130px;
+    width: auto;
+    left: 36%;
+    position: absolute;
+    bottom: 350px;    
+    
+}
 .modal-dialog {
     position: absolute;
     top: 50% !important;
@@ -170,10 +187,10 @@ footer {
     position: absolute;
 }
 
-    .modal-close img {
-        height: 28px;
-        width: auto;
-    }
+.modal-close img {
+    height: 28px;
+    width: auto;
+}
 
 .register-box {
     top: 65%;
@@ -189,8 +206,6 @@ footer {
     padding: 5px 100px;
 }
 
-
-
 #wrapper {
     padding-left: 0;
     -webkit-transition: all 0.5s ease;
@@ -199,9 +214,9 @@ footer {
     transition: all 0.5s ease;
 }
 
-    #wrapper.toggled {
-        padding-left: 250px;
-    }
+#wrapper.toggled {
+    padding-left: 250px;
+}
 
 #sidebar-wrapper {
     z-index: 1000;
@@ -233,6 +248,7 @@ footer {
     margin-right: -250px;
 }
 
+
 /* Sidebar Styles */
 
 .sidebar-nav {
@@ -244,65 +260,60 @@ footer {
     list-style: none;
 }
 
-    .sidebar-nav li {
-        text-indent: 20px;
-        line-height: 40px;
-    }
+.sidebar-nav li {
+    text-indent: 20px;
+    line-height: 40px;
+}
 
-        .sidebar-nav li a {
-            display: block;
-            text-decoration: none;
-            color: #999999;
-        }
+.sidebar-nav li a {
+    display: block;
+    text-decoration: none;
+    color: #999999;
+}
 
-            .sidebar-nav li a:hover {
-                text-decoration: none;
-                color: #fff;
-                background: rgba(255,255,255,0.2);
-            }
+.sidebar-nav li a:hover {
+    text-decoration: none;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.2);
+}
 
-            .sidebar-nav li a:active,
-            .sidebar-nav li a:focus {
-                text-decoration: none;
-            }
+.sidebar-nav li a:active,
+.sidebar-nav li a:focus {
+    text-decoration: none;
+}
 
-    .sidebar-nav > .sidebar-brand {
-        height: 65px;
-        font-size: 15px;
-        line-height: 60px;
-    }
+.sidebar-nav> .sidebar-brand {
+    height: 65px;
+    font-size: 18px;
+    line-height: 60px;
+}
 
-        .sidebar-nav > .sidebar-brand a {
-            color: #999999;
-        }
+.sidebar-nav> .sidebar-brand a {
+    color: #999999;
+}
 
-            .sidebar-nav > .sidebar-brand a:hover {
-                color: #fff;
-                background: none;
-            }
+.sidebar-nav> .sidebar-brand a:hover {
+    color: #fff;
+    background: none;
+}
 
 @media(min-width:768px) {
     #wrapper {
         padding-left: 250px;
     }
-
-        #wrapper.toggled {
-            padding-left: 0;
-        }
-
+    #wrapper.toggled {
+        padding-left: 0;
+    }
     #sidebar-wrapper {
         width: 250px;
     }
-
     #wrapper.toggled #sidebar-wrapper {
         width: 0;
     }
-
     #page-content-wrapper {
         padding: 20px;
         position: relative;
     }
-
     #wrapper.toggled #page-content-wrapper {
         position: relative;
         margin-right: 0;
@@ -312,7 +323,6 @@ footer {
 .active a {
     color: white !important;
 }
-
 
 .cbp-spmenu {
     background: white;
@@ -324,23 +334,23 @@ footer {
     padding-bottom: 25px;
 }
 
-    .menu-li img {
-        height: 100px;
-        width: auto;
-    }
+.menu-li img {
+    height: 100px;
+    width: auto;
+}
 
-    .menu-li p {
-        font-size: large;
-        text-transform: uppercase;
-        font-weight: bold;
-    }
-
+.menu-li p {
+    font-size: large;
+    text-transform: uppercase;
+    font-weight: bold;
+}
 
 .cbp-spmenu-left.cbp-spmenu-open {
     left: 0px;
 }
 
-.cbp-spmenu, .cbp-spmenu-push {
+.cbp-spmenu,
+.cbp-spmenu-push {
     -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
     transition: all 0.3s ease;
@@ -355,9 +365,9 @@ footer {
     height: 100%;
     top: 0;
     z-index: 1000;
-    -webkit-box-shadow: 8px 0px 5px -2px rgba(0,0,0,0.75);
-    -moz-box-shadow: 8px 0px 5px -2px rgba(0,0,0,0.75);
-    box-shadow: 8px 0px 5px -2px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 8px 0px 5px -2px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 8px 0px 5px -2px rgba(0, 0, 0, 0.75);
+    box-shadow: 8px 0px 5px -2px rgba(0, 0, 0, 0.75);
 }
 
 .menu {
@@ -366,7 +376,6 @@ footer {
     transition: all 0.3s ease;
 }
 
-    .menu.menu-open {
-        left: 200px;
-    }
-
+.menu.menu-open {
+    left: 200px;
+}

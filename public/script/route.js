@@ -1,4 +1,4 @@
-﻿(function () {
+(function () {
     angular
         .module('doghotelApp')
         .config(config);
@@ -12,20 +12,20 @@
                 controller: "HomeController",
                 controllerAs: 'home',
             })
-           .state('login', {
-               url: '/login',
-               templateUrl: 'view/login.html',
-               controller: "LoginController",
-               controllerAs: 'login',
-           })
+            .state('login', {
+                url: '/login',
+                templateUrl: 'view/login.html',
+                controller: "LoginController",
+                controllerAs: 'login',
+            })
 
         .state('admin', {
-            url: '/admin',
-            templateUrl: 'view/admin.html',
-            abstract: true,
-            controller: "AdminController",
-            controllerAs: 'admin',
-        })
+                url: '/admin',
+                templateUrl: 'view/admin.html',
+                abstract: true,
+                controller: "AdminController",
+                controllerAs: 'admin',
+            })
             .state('admin.userlist', {
                 url: '/userlist',
                 templateUrl: 'view/userlist.html',
@@ -38,18 +38,24 @@
                 controller: "ContactListController",
                 controllerAs: 'contactlist'
             })
-         .state('admin.dogdetail', {
-             url: '/dogdetail',
-             templateUrl: 'view/dogdetail.html',
-             controller: "DogDetailController",
-             controllerAs: 'dogdetail'
-         })
-        .state('admin.dogdetaillist', {
-            url: '/dogdetaillist',
-            templateUrl: 'view/dogdetaillist.html',
-            controller: "DogDetailListController",
-            controllerAs: 'dogdetailList'
-        });
+            .state('admin.dogdetail', {
+                url: '/dogdetail',
+                templateUrl: 'view/dogdetail.html',
+                controller: "DogDetailController",
+                controllerAs: 'dogdetail'
+            })
+            .state('admin.dogdetailbyid', {
+                url: '/dogdetail/:id',
+                templateUrl: 'view/dogdetail.html',
+                controller: "DogDetailController",
+                controllerAs: 'dogdetail'
+            })
+            .state('admin.dogdetaillist', {
+                url: '/dogdetaillist',
+                templateUrl: 'view/dogdetaillist.html',
+                controller: "DogDetailListController",
+                controllerAs: 'dogdetailList'
+            });
 
 
         $urlRouterProvider.otherwise('/login');
