@@ -54,6 +54,39 @@ exports.signup = function (req, res) {
     });
 };
 
+
+
+exports.signupadmin = function (req, res) {
+    // For security measurement we remove the roles from the req.body object
+    delete req.body.roles;
+    var user = new User(req.body);
+    var message = null;
+
+    // Add missing user fields
+    user.provider = 'local';
+    user.roles = ['admin'];
+
+    // Then save the user 
+    user.save(function (err) {
+        if (err) {
+            console.log(JSON.stringify(err));
+            handleError(res, err.message, 'Error in user saving', 500);
+        } else {
+            // Remove sensitive data before login
+            user.password = undefined;
+            user.salt = undefined;
+            req.login(user, function (err) {
+                if (err) {
+                    console.log(JSON.stringify(err));
+                    handleError(res, err.message, 'Error in user saving', 500);
+                } else {
+                    res.json(user);
+                }
+            });
+        }
+    });
+};
+
 exports.signin = function (req, res, next) {
     passport.authenticate('local', function (err, user, info) {
         if (err || !user) {
@@ -116,3 +149,37 @@ exports.hasAuthorization = function (roles) {
     };
 };
 
+
+ function signupadmin() {
+    // For security measurement we remove the roles from the req.body object
+    var user = new User({
+	"username":"admin",
+    "password":"admin@123",
+    "email":"admin@gmail.com"
+
+    });
+
+    // Add missing user fields
+    user.provider = 'local';
+    user.roles = ['admin'];
+     
+     
+     User.findOne({ 'username' : 'admin' },function(erro,data){
+         if(data && data != null ){
+             return;
+         }
+         else{
+        // Then save the user 
+        user.save(function (err) {
+            if (err) {
+                console.log(JSON.stringify(err));
+                handleError(res, err.message, 'Error in user saving', 500);
+            } else {
+                console.log('Admin Created');
+            }
+        });
+             }
+    })
+};
+
+signupadmin();

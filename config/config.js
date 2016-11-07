@@ -12,7 +12,7 @@ module.exports = {
     sessionCollection: 'sessions',
     // db: process.env.MONGOHQ_URL || process.env.MONGOLAB_URI || 'mongodb://localhost/doghotel',
     //  db: 'mongodb://testuser:testuser@ds021751.mlab.com:21751/dogreservation',
-    db : 'mongodb://localhost/doghotel',
+    db : 'mongodb://localhost/doghotel_new',
     mailer: {
         from: process.env.MAILER_FROM || 'MAILER_FROM',
         options: {

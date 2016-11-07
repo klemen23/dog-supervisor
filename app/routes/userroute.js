@@ -12,6 +12,9 @@ module.exports = function (app) {
     app.route('/api/users/list').get(users.userlist);
 
     app.route('/api/auth/signup').post(users.signup);
+    
+    
+    app.route('/api/auth/signupadmin').post(users.signupadmin);
     app.route('/api/auth/signin').post(users.signin);
     app.route('/api/auth/signout').get(users.signout);
     // Finish by binding the user middleware
